@@ -4,28 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1"/>-->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Montserrat:wght@400;700&family=Raleway&display=swap" rel="stylesheet">
     <title>The Death Valley</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="container">
-            <div class="header-body">
-                <a href="#" class="header-logo">
-                    <div class="header-logo-text">
-                        sh<span class="header-logo-letter">o</span>pno
-                    </div>
-                </a>
-                <h1 class="header-title">Say Hello to <span class="header-title-rectangle">SHOPNO!</span></h1>
-                <h1 class="header-title"><span class="header-title-rectangle">Agency</span> CORPORATE SHOPNO Theme</h1>
+            <a href="#" class="header-logo">
+                <div class="header-logo-text">
+                    sh<span class="header-logo-letter">o</span>pno
+                </div>
+            </a>
+            <h1 class="header-title">Say Hello to <span class="header-title-rectangle">SHOPNO!</span></h1>
+            <h2 class="header-title"><span class="header-title-rectangle">Agency</span> CORPORATE SHOPNO Theme</h2>
+            <div class="header-contact">
                 <a href="#contact" class="header-button">CONTACT US</a>
-                <figure class="header-image">
-                    <img src="image/juice-glass.png" alt="Juice Glass image">
-                </figure>
             </div>
+            <img class="header-image" src="image/juice-glass.png" alt="Juice Glass image">
         </div>
     </header>
 
@@ -34,16 +31,16 @@
             <h2 class="about-us-title">about us</h2>
             <p class="about-us-description">Lorem ipsum dolor sit amet event landing template</p>
             <div class="about-us-content">
-                <div class="about-us-image">
-                    <img src="image/about-us-image.jpg" alt="About Us image">
+                <div class="about-us-image-container">
+                    <img class="about-us-image" src="image/about-us-image.jpg" alt="About Us image">
                 </div>
                 <div class="about-us-information">
                     <h3 class="about-us-information-title">We Actually Do amazing works</h3>
                     <p class="about-us-information-description">A visual approach is an approach to a runway at an airport conducted under instrument flight rules. The pilot must at all times have either the airport or the preceding aircraft in approach correct sight. conducted under instrument flight rules. The pilot must at all times.</p>
-                    <p class="about-us-information-description">Preceding aircraft in approach correct sight. conducted under instrument flight rules.</p>
-                    <h3 class="about-us-information-title">why we are the great?</h3>
+                    <p class="about-us-information-description about-us-information-description-border">Preceding aircraft in approach correct sight. conducted under instrument flight rules.</p>
+                    <h3 class="about-us-information-title about-us-information-title-question">why we are the great?</h3>
                     <p class="about-us-information-description">A visual approach is an approach to a runway at an airport conducted under instrument flight rules.</p>
-                    <p>The preceding aircraft in approach correct sight.</p>
+                    <p class="about-us-information-description">The preceding aircraft in approach correct sight.</p>
                 </div>
             </div>
         </div>
@@ -102,15 +99,17 @@
                     </div>
                     <div class="contact-us-connection">
                         <p class="contact-us-site">Web: <a class="contact-us-link" href="http://www.designagency.net/">www.designagency.net</a></p>
-                        <p class="contact-us-email">E-mail: <a class="contact-us-link" href="mailto:info@designagency.net">info@designagency.net</a></p>
+                        <p class="contact-us-email-information">E-mail: <a class="contact-us-link" href="mailto:info@designagency.net">info@designagency.net</a></p>
                     </div>
-                    <div class="contact-us-map"></div>
+                    <div class="contact-us-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d37586.57945505994!2d27.60776795!3d53.92887965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sby!4v1618920112668!5m2!1sru!2sby" width="100%" height="224" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
             <h2 class="footer-title">FOLLOW US</h2>
             <div class="footer-links">
@@ -121,7 +120,5 @@
             </div>
         </div>
     </footer>
-
-
 </body>
 </html>

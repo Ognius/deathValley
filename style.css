@@ -9,19 +9,14 @@ body {
 .container {
     max-width: 1140px;
     margin: 0 auto;
-}
-header {
-    background-color: #eff0f2;
-    width: 100%;
-    height: 100%;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    padding: 64px 0 196px;
-}
-.header-body {
     display: flex;
     flex-direction: column;
     position: relative;
+}
+.header {
+    background-color: #eff0f2;
+    opacity: 0.988;
+    padding: 64px 0 196px;
 }
 .header-logo {
     text-decoration: none;
@@ -31,36 +26,306 @@ header {
     border: 5.54px solid #170f1c;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 206px;
+    margin-bottom: 208px;
+    padding-top: 6px;
 }
 .header-logo-text {
     font-size: 17px;
     color: #000000;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
     font-weight: bold;
-    line-height: 1.75rem;
     text-shadow: 0 0 2px rgba(21, 21, 22, 0.75);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
 }
-.header-body .header-logo-letter {
+.header-logo-letter {
     font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
     color: #77efe5;
-    line-height: 1.75rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.02em;
 }
 .header-title {
     font-size: 45px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
     color: #505050;
     font-weight: 700;
     line-height: 0.622;
     text-align: center;
     text-shadow: 0 9px 10px rgba(0, 0, 0, 0.24);
     letter-spacing: 0.028em;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 .header-title-rectangle {
-    background-color: #76F4EA;
-    padding: 0 14px;
+    background-color: rgba(118, 244, 234, 0.502);
+    padding: 0 10px;
+}
+.header-contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 119px;
+}
+.header-button {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(0, 0, 0, 0.749);
+    text-transform: uppercase;
+    line-height: 1.556;
+    border: 2px solid rgba(0, 0, 0, 0.502);
+    border-radius: 2px;
+    letter-spacing: 0.12em;
+    width: 232px;
+    height: 53px;
+    box-sizing: border-box;
+    padding: 2px 0 0 2.5px;
+}
+.header-image {
+    position: absolute;
+    left: 970px;
+    top: 518px;
+}
+.about-us-container {
+    background-color: rgb(248, 250, 250);
+    padding: 129px 0 159px;
+}
+.about-us-title {
+    font-size: 38px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.902);
+    font-weight: bold;
+    line-height: 0.737;
+    letter-spacing: 0.04em;
+    margin: 0 0 10px 22px;
+}
+.about-us-description {
+    font-size: 18px;
+    font-family: "Merriweather", serif;
+    color: rgba(0, 0, 0, 0.62);
+    text-transform: uppercase;
+    line-height: 1.556;
+    text-align: center;
+    letter-spacing: 0.07em;
+}
+.about-us-content {
+    display: flex;
+    margin-top: 140px;
+}
+.about-us-image-container {
+    margin: 0 155px 0 80px;
+}
+.about-us-image {
+    max-width: 392px;
+    max-height: 483px;
+    background-color: rgb(228, 229, 232);
+    box-shadow: 0 0 30px 0 rgba(20, 20, 21, 0.13);
+}
+.about-us-information {
+    margin-right: 20px;
+}
+.about-us-information-title {
+    font-size: 20px;
+    font-family: "Merriweather", serif;
+    color: rgba(0, 0, 0, 0.749);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 20px;
+}
+.about-us-information-description {
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    color: rgba(0, 0, 0, 0.741);
+    line-height: 1.75;
+    letter-spacing: 0.05em;
+}
+.about-us-information-description-border {
+    margin: 29px 0 29px;
+}
+.about-us-information-title-question {
+    font-size: 17px;
+    line-height: 1.647;
+    margin-bottom: 13px;
+}
+.featured-works {
+    padding: 132px 0 125px;
+}
+.featured-works-title {
+    font-size: 38px;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(0, 0, 0, 0.902);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 0.737;
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin: 0 0 11px 40px;
+}
+.featured-works-description {
+    font-size: 17px;
+    font-family: "Merriweather", serif;
+    color: rgba(0, 0, 0, 0.62);
+    text-transform: uppercase;
+    line-height: 1.647;
+    text-align: center;
+    letter-spacing: 0.07em;
+}
+.featured-works-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px 14px;
+    margin-top: 114px;
+    list-style-type: none;
+}
+.featured-works-item {
+    max-width: 370px;
+    max-height: 359px;
+    cursor: pointer;
+    background-color: rgb(0, 174, 239);
+}
+.small-team {
+    background-color: rgb(249, 251, 251);
+    padding: 99px 0 175px;
+}
+.small-team-title {
+    font-size: 38px;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(0, 0, 0, 0.902);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 0.737;
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+}
+.small-team-description {
+    font-size: 17px;
+    font-family: "Merriweather", serif;
+    color: rgba(0, 0, 0, 0.62);
+    text-transform: uppercase;
+    line-height: 1.647;
+    text-align: center;
+    letter-spacing: 0.07em;
+}
+.small-team-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 12px;
+    row-gap: 15px;
+    margin-top: 115px;
+    list-style-type: none;
+}
+.small-team-item {
+    max-width: 370px;
+    max-height: 440px;
+    cursor: pointer;
+    background-color: #ff4949;
+}
+.contact-us {
+    background: rgba(255, 255, 255, 0.671) url("image/contact-background.jpg") no-repeat center;
+    background-size: 100%;
+    padding: 132px 0 129px;
+}
+.contact-us-content {
+    display: grid;
+    grid-template-columns: 613px 500px;
+    column-gap: 26px;
+}
+.contact-us-form, .contact-us-information {
+    background-color: rgb(2, 22, 35);
+    opacity: 0.71;
+    box-shadow: 0 0 30px 0 rgba(21, 21, 21, 0.12);
+}
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    padding: 39px 33px 38px 33px;
+}
+.contact-us-name, .contact-us-subject, .contact-us-email, .contact-us-message {
+    font-size: 15px;
+    font-family: "Raleway", sans-serif;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.9;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.contact-us-subject, .contact-us-email, .contact-us-message {
+    margin-top: 22px;
+}
+.contact-us-name, .contact-us-subject {
+    padding-bottom: 9px;
+}
+.contact-us-email {
+    line-height: 1.6;
+    padding-bottom: 10px;
+}
+.contact-us-message {
+    padding-bottom: 56px;
+}
+/*.contact-us-name::placeholder, .contact-us-subject::placeholder, .contact-us-email::placeholder, .contact-us-message::placeholder {*/
+/*    padding-left: 20px;*/
+/*}*/
+.contact-us-submit {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    color: rgba(0, 0, 0, 0.702);
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.556;
+    border-radius: 2px;
+    background-color: rgb(110, 238, 228);
+    align-self: flex-start;
+    margin-top: 38px;
+    padding: 11px 35px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+.contact-us-information {
+    padding: 31px 30px 19px;
+}
+.contact-us-address, .contact-us-connection {
+    font-size: 15px;
+    font-family: "Raleway", sans-serif;
+    color: rgba(255, 255, 255, 0.702);
+    line-height: 1.6;
+}
+.contact-us-connection {
+    margin-top: 24px;
+}
+.contact-us-link {
+    outline: none;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.702);
+}
+.contact-us-map {
+    width: 100%;
+    height: 224px;
+    opacity: 1;
+    margin-top: 20px;
+}
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0 152px;
+    background-color: rgb(38, 43, 46);
+}
+.footer-title {
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.563;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 
