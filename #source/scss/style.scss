@@ -639,7 +639,8 @@ body {
 
 // PopUp
 .hidden {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 .popup {
     width : 100%;
@@ -653,11 +654,14 @@ body {
         top: 50%;
         position: absolute;
         transform: translate(-50%, -50%);
+        //transition: all 0.8s ease 0s;
     }
     &__content {
         width: 600px;
-        display: flex;
-        flex-direction: column-reverse;
+        position: relative;
+        //transition: all 0.8s ease 0s;
+        //opacity: 0;
+        //transform: translate(0px, -100%);
         @media screen and (max-width: 768px) {
             width : 400px;
         }
@@ -665,28 +669,28 @@ body {
             width : 300px;
         }
     }
-    &__image {
-        width: 100%;
-    }
     &__close-button {
-        width: 110%;
-        display: flex;
-        justify-content: flex-end;
-        border: none;
-        outline: none;
+        right: 15px;
+        position: absolute;
         background: none;
-        border: none;
         cursor: pointer;
         font-size: 60px;
-        font-weight: bold;
         color: #6EEEE4;
         @media screen and (max-width: 768px) {
-            width : 105%;
-            font-weight: normal;
+            top: -5px;
+            right: 10px;
+            font-size: 55px;
         }
         @media screen and (max-width: 480px) {
-            width : 105%;
-            font-weight: normal;
+            right: 5px;
+            font-size: 45px;
         }
+    }
+    &__close-button:hover {
+        border-radius: 50%;
+        background-color: rgba(138, 135, 135, 0.5);
+    }
+    &__image {
+        width: 100%;
     }
 }

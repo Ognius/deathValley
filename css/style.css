@@ -934,7 +934,8 @@ body {
 }
 
 .hidden {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .popup {
@@ -955,13 +956,7 @@ body {
 }
 .popup__content {
     width: 600px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    position: relative;
 }
 @media screen and (max-width: 768px) {
     .popup__content {
@@ -973,35 +968,31 @@ body {
         width: 300px;
     }
 }
-.popup__image {
-    width: 100%;
-}
 .popup__close-button {
-    width: 110%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    border: none;
-    outline: none;
+    right: 15px;
+    position: absolute;
     background: none;
-    border: none;
     cursor: pointer;
     font-size: 60px;
-    font-weight: bold;
     color: #6EEEE4;
 }
 @media screen and (max-width: 768px) {
     .popup__close-button {
-        width: 105%;
-        font-weight: normal;
+        top: -5px;
+        right: 10px;
+        font-size: 55px;
     }
 }
 @media screen and (max-width: 480px) {
     .popup__close-button {
-        width: 105%;
-        font-weight: normal;
+        right: 5px;
+        font-size: 45px;
     }
+}
+.popup__close-button:hover {
+    border-radius: 50%;
+    background-color: rgba(138, 135, 135, 0.5);
+}
+.popup__image {
+    width: 100%;
 }

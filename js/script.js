@@ -7,6 +7,10 @@ popupOpenImages.forEach(function (item) {
         const popupId = this.dataset.popupImage;
         const popup = document.querySelector('#' + popupId);
         popup.classList.remove('hidden');
+        if (popupId === 'image-2' || popupId === 'image-6') {
+            popup.querySelector('.popup__close-button').style.color = "#b83868";
+        }
+
         popup.querySelector('.popup__body').addEventListener('click', function (e) {
             e.stopPropagation();
         })
