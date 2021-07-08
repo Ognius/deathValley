@@ -641,6 +641,7 @@ body {
 .hidden {
     opacity: 0;
     visibility: hidden;
+    transform: perspective(100px) translate(0px, -100%) rotateX(45deg);
 }
 .hidden-scroll {
     overflow: hidden;
@@ -652,19 +653,16 @@ body {
     top : 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    transition: all 1.0s ease 0s;
     &__body {
         left: 50%;
         top: 50%;
         position: absolute;
         transform: translate(-50%, -50%);
-        //transition: all 0.8s ease 0s;
     }
     &__content {
         width: 600px;
         position: relative;
-        //transition: all 0.8s ease 0s;
-        //opacity: 0;
-        //transform: translate(0px, -100%);
         @media screen and (max-width: 768px) {
             width : 400px;
         }

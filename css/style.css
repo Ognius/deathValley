@@ -936,6 +936,8 @@ body {
 .hidden {
     opacity: 0;
     visibility: hidden;
+    -webkit-transform: perspective(100px) translate(0px, -100%) rotateX(45deg);
+            transform: perspective(100px) translate(0px, -100%) rotateX(45deg);
 }
 
 .hidden-scroll {
@@ -949,6 +951,9 @@ body {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
 }
 .popup__body {
     left: 50%;
