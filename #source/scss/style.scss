@@ -638,11 +638,6 @@ body {
 }
 
 // PopUp
-.hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: perspective(100px) translate(0px, -100%) rotateX(45deg);
-}
 .hidden-scroll {
     overflow: hidden;
 }
@@ -654,6 +649,16 @@ body {
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
     transition: all 1.0s ease 0s;
+    opacity: 0;
+    visibility: hidden;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+    }
+    &.open .popup__content {
+        opacity: 1;
+        transform: perspective(400px) translate(0px, 0px) rotateX(0deg);
+    }
     &__body {
         left: 50%;
         top: 50%;
@@ -663,6 +668,8 @@ body {
     &__content {
         width: 600px;
         position: relative;
+        transition: all 1.0s ease 0s;
+        transform: perspective(400px) translate(0px, -100%) rotateX(45deg);
         @media screen and (max-width: 768px) {
             width : 400px;
         }
