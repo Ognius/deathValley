@@ -1,8 +1,9 @@
+// Popup
 const popupOpenImages = document.querySelectorAll('.featured-works__image');
 const popupImages = document.querySelector('.popup__image');
 const popupCloseImages = document.querySelector('.popup__close-button');
 const popup = document.querySelector('.popup');
-const body = document.querySelector("body");
+const body = document.querySelector('body');
 const timeout = 1000;
 
 if (popupOpenImages.length > 0) {
@@ -16,22 +17,23 @@ if (popupOpenImages.length > 0) {
             if (imageSrc === 'image/banner-pic2.jpg' || imageSrc === 'image/banner-pic6.jpg') {
                 popupCloseImages.style.color = '#b83868';
             } else {
-                popupCloseImages.style.color = '#6EEEE4';
+                popupCloseImages.style.color = '#6eeee4';
             }
 
             popup.querySelector('.popup__body').addEventListener('click', function (e) {
                 e.stopPropagation();
             });
+
         });
     });
 }
 
 function popupCloseImage(item) {
     item.addEventListener('click', function () {
-        popup.classList.remove('open');
-        bodyUnlock();
+        popupLock();
     });
 }
+
 popupCloseImage(popupCloseImages);
 popupCloseImage(popup);
 
@@ -50,7 +52,58 @@ function bodyUnlock() {
 
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-        popup.classList.remove('open');
-        bodyUnlock();
+        popupLock();
     }
 });
+
+const popupLock = () => {
+    popup.classList.remove('open');
+    bodyUnlock();
+}
+
+// Initialize slider
+let position = 0;
+const slidesToShow = 1;
+const slidesToScroll = 1;
+const container = document.querySelector('.slider-container');
+const row = document.querySelector('.slider-row');
+const buttonPrev = document.querySelector('.slider-button-prev');
+const buttonNext = document.querySelector('.slider-button-next');
+const items = document.querySelectorAll('.slider-item');
+const itemsCount = items.length;
+const itemWidth = container.clientWidth / slidesToShow;
+const movePosition = slidesToScroll * itemWidth;
+
+items.forEach(function (item) {
+  item.style.minWidth = `${itemWidth}px`;
+});
+
+buttonNext.addEventListener('click', function () {
+    const itemRemain = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
+
+    position -= (itemRemain >= slidesToScroll) ? movePosition : itemRemain * itemWidth;
+
+    setPosition();
+    checkButtons();
+});
+
+buttonPrev.addEventListener('click', function () {
+   const itemRemain = Math.abs(position) / itemWidth;
+
+   position += (itemRemain >= slidesToScroll) ? movePosition : itemRemain * itemWidth;
+
+   setPosition();
+   checkButtons();
+});
+
+const setPosition = () => {
+   row.style.transform = `translateX(${position}px)`;
+};
+
+const checkButtons = () => {
+    buttonPrev.disabled = (position === 0);
+    buttonNext.disabled = (position <= -(itemsCount - slidesToShow) * itemWidth);
+};
+
+checkButtons();
+

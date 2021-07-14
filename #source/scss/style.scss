@@ -13,70 +13,80 @@ $margin-top_1-media : 90px;
 $margin-top_2-media : 60px;
 $margin-top_3-media : 40px;
 
-@mixin paddings ($pt, $pb) {
+@mixin paddings($pt, $pb) {
     padding-top    : $pt;
     padding-bottom : $pb;
 }
-@mixin background-color ($bc) {
-    background-color: $bc;
+
+@mixin background-color($bc) {
+    background-color : $bc;
 }
-@mixin montserrat-font ($fz, $c, $ls) {
+
+@mixin montserrat-font($fz, $c, $ls) {
     font-size      : $fz;
     color          : $c;
     letter-spacing : $ls;
-    font-family    : "Montserrat", sans-serif;
+    font-family    : 'Montserrat', sans-serif;
     text-transform : uppercase;
 }
-@mixin raleway-font ($fz, $c, $lh) {
+
+@mixin raleway-font($fz, $c, $lh) {
     font-size   : $fz;
-    font-family : "Raleway", sans-serif;
+    font-family : 'Raleway', sans-serif;
     color       : $c;
     line-height : $lh;
 }
+
 @mixin section-title {
     font-size      : 38px;
     text-align     : center;
-    font-family    : "Montserrat", sans-serif;
+    font-family    : 'Montserrat', sans-serif;
     text-transform : uppercase;
     color          : #191919;
     font-weight    : $fontw_2;
     line-height    : 0.737;
     letter-spacing : 0.04em;
 }
-@mixin section-description ($fz, $lh, $ls) {
+
+@mixin section-description($fz, $lh, $ls) {
     font-size      : $fz;
     text-align     : center;
-    font-family    : "Merriweather", serif;
+    font-family    : 'Merriweather', serif;
     color          : #616161;
     text-transform : uppercase;
     line-height    : $lh;
     letter-spacing : $ls;
 }
-@mixin image-size ($mw, $mh) {
+
+@mixin image-size($mw, $mh) {
     max-width  : $mw;
     max-height : $mh;
 }
-@mixin header-size ($w, $h, $mb, $pt) {
+
+@mixin header-size($w, $h, $mb, $pt) {
     width         : $w;
     height        : $h;
     margin-bottom : $mb;
     padding-top   : $pt;
 }
-@mixin block-font ($fz, $lh) {
+
+@mixin block-font($fz, $lh) {
     font-size   : $fz;
     line-height : $lh;
 }
 
 * {
-    margin    : 0;
-    padding   : 0;
-    border    : 0;
-    box-sizing: border-box;
+    margin     : 0;
+    padding    : 0;
+    border     : 0;
+    box-sizing : border-box;
 }
+
 html,
 body {
-    height: 100%;
+    height : 100%;
 }
+
 .container {
     max-width      : 1170px;
     margin         : 0 auto;
@@ -84,81 +94,92 @@ body {
     display        : flex;
     flex-direction : column;
 }
+
 .header {
     padding  : 64px 0 195px;
     position : relative;
     opacity  : 0.988;
-    @include background-color (#eff0f2);
+    @include background-color(#eff0f2);
+
     &__logo {
-        @include header-size (113px, 46px, 194px, 7px);
+        @include header-size(113px, 46px, 194px, 7px);
         display         : flex;
         justify-content : center;
         text-decoration : none;
         border          : 5.54px solid #170f1c;
-        @media screen and (max-width: 480px) {
-            @include header-size (99px, 42px, 140px, 3px);
+        @media screen and (max-width : 480px) {
+            @include header-size(99px, 42px, 140px, 3px);
         }
+
         &-text {
-            @include montserrat-font (17px, $color_7, 0.04em);
+            @include montserrat-font(17px, $color_7, 0.04em);
             font-weight : $fontw_2;
             text-shadow : 0 0 2px $color_2;
-            @media screen and (max-width: 480px) {
+            @media screen and (max-width : 480px) {
                 font-size : 15px;
             }
         }
+
         &-letter {
-            @include montserrat-font (20px, #77efe5, 0.02em);
+            @include montserrat-font(20px, #77efe5, 0.02em);
         }
+
         &:hover {
             transform : rotateZ(20deg);
         }
     }
+
     &__title {
         margin-bottom : 4px;
-        @include montserrat-font (45px, $color_2, 0.06em);
+        @include montserrat-font(45px, $color_2, 0.06em);
         //font-size: calc(24px + 21 * ((100vw - 320px) / (1440 - 320)));
         text-align    : center;
         font-weight   : $fontw_2;
         text-shadow   : 0 9px 10px #c2c2c2;
-        @media screen and (max-width: 1200px) {
-            @include block-font (41px, 3.5rem);
+        @media screen and (max-width : 1200px) {
+            @include block-font(41px, 3.5rem);
         }
-        @media screen and (max-width: 992px) {
-            @include block-font (39px, 2.4rem);
+        @media screen and (max-width : 992px) {
+            @include block-font(39px, 2.4rem);
             margin-bottom : 25px;
         }
-        @media screen and (max-width: 768px) {
-            @include block-font (37px, 2.8rem);
+        @media screen and (max-width : 768px) {
+            @include block-font(37px, 2.8rem);
         }
-        @media screen and (max-width: 480px) {
-            @include block-font (24px, 2rem);
+        @media screen and (max-width : 480px) {
+            @include block-font(24px, 2rem);
         }
+
         &-first-sentence {
             letter-spacing : 0.04em;
             margin-left    : 21px;
-            @media screen and (max-width: 480px) {
+            @media screen and (max-width : 480px) {
                 margin-left : 0;
             }
         }
+
         &-rectangle {
             padding : 0 10px;
-            @include background-color ($color_3);
+            @include background-color($color_3);
         }
+
         &-second-sentence {
             letter-spacing : 0.05em;
         }
     }
+
     &__contact {
         margin-top      : 135px;
         display         : flex;
         justify-content : center;
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width : 992px) {
             margin-top : $margin-top_2-media;
         }
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width : 480px) {
             margin-top : $margin-top_3-media;
         }
     }
+
     &__button {
         width           : 232px;
         padding         : 14px 0 13px 2.5px;
@@ -169,104 +190,114 @@ body {
         text-decoration : none;
         border          : 2px solid #808080;
         border-radius   : 2px;
-        @include montserrat-font (18px, $color_6, 0.12em);
-        @media screen and (max-width: 768px) {
+        @include montserrat-font(18px, $color_6, 0.12em);
+        @media screen and (max-width : 768px) {
             width : 200px;
         }
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width : 480px) {
             width     : 160px;
             font-size : 15px;
         }
+
         &:hover {
-            @include background-color ($color_3);
+            @include background-color($color_3);
             transition : all 1s ease-in-out;
         }
+
         &:active {
-            @include background-color ($color_4);
+            @include background-color($color_4);
             color      : $color_5;
             transition : $transition_1;
         }
     }
+
     &__image {
         position : absolute;
         left     : 77.85%;
         top      : 72.2%;
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width : 480px) {
             left : 72%;
             top  : 79%;
         }
     }
 }
+
 .about-us {
-    @include paddings (128px, 162px);
-    @include background-color (#f8fafa);
-    @media screen and (max-width: 1200px) {
+    @include paddings(128px, 162px);
+    @include background-color(#f8fafa);
+    @media screen and (max-width : 1200px) {
         @include paddings(64px, 90px);
     }
-    @media screen and (max-width: 768px) {
-        @include paddings (60px, 60px);
+    @media screen and (max-width : 768px) {
+        @include paddings(60px, 60px);
     }
-    @media screen and (max-width: 480px) {
-        @include paddings (40px, 40px);
+    @media screen and (max-width : 480px) {
+        @include paddings(40px, 40px);
     }
+
     &__title {
         margin : 0 0 11px 22px;
         @include section-title;
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width : 1200px) {
             margin : $margin-media;
         }
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width : 992px) {
             margin : $margin-media;
         }
-        @media screen and (max-width: 768px) {
-            margin: $margin-media;
+        @media screen and (max-width : 768px) {
+            margin : $margin-media;
         }
-        @media screen and (max-width: 480px) {
-            margin: $margin-media;
-            @include block-font (30px, 1);
+        @media screen and (max-width : 480px) {
+            margin : $margin-media;
+            @include block-font(30px, 1);
         }
     }
+
     &__description {
         @include section-description(18px, 1.556, 0.07em);
-        @media screen and (max-width: 480px) {
-            font-size: 15px;
+        @media screen and (max-width : 480px) {
+            font-size : 15px;
         }
     }
+
     &__content {
         margin-top : 141px;
         display    : flex;
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width : 1200px) {
             margin-top : $margin-top_1-media;
         }
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width : 992px) {
             margin-top     : $margin-top_2-media;
             flex-direction : column;
             align-items    : center;
         }
-        @media screen and (max-width: 768px) {
-            margin-top: $margin-top_3-media;
+        @media screen and (max-width : 768px) {
+            margin-top : $margin-top_3-media;
         }
     }
+
     &__image-container {
         margin : 0 155px 0 80px;
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width : 1200px) {
             margin-right : 63px;
         }
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width : 992px) {
             margin : 0;
         }
     }
+
     &__image {
-        @include image-size (392px, 483px);
-        @include background-color (#E4E5E8);
+        @include image-size(392px, 483px);
+        @include background-color(#e4e5e8);
         box-shadow : 0 0 30px 0 #e0e0e1;
-        @media screen and (max-width: 480px) {
-            @include image-size (260px, 320px);
+        @media screen and (max-width : 480px) {
+            @include image-size(260px, 320px);
         }
     }
+
     &__information {
         margin-right : 20px;
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width : 992px) {
             max-width      : 500px;
             margin-right   : 0;
             margin-top     : 50px;
@@ -274,85 +305,93 @@ body {
             flex-direction : column;
             align-items    : center;
         }
-        @media screen and (max-width: 768px) {
-            text-align: center;
+        @media screen and (max-width : 768px) {
+            text-align : center;
         }
+
         &-title {
             margin-top     : 1px;
             margin-bottom  : 19px;
             font-size      : 20px;
-            font-family    : "Merriweather", serif;
+            font-family    : 'Merriweather', serif;
             color          : $color_6;
             font-weight    : $fontw_2;
             text-transform : uppercase;
             letter-spacing : 0.07em;
-            @media screen and (max-width: 992px) {
+            @media screen and (max-width : 992px) {
                 font-size : 23px;
             }
-            @media screen and (max-width: 480px) {
-                font-size: 17px;
+            @media screen and (max-width : 480px) {
+                font-size : 17px;
             }
+
             &--question {
                 margin-bottom  : 12px;
                 padding-top    : 1px;
                 letter-spacing : 0.073em;
-                @include block-font (17px, 1.647);
-                @media screen and (max-width: 992px) {
+                @include block-font(17px, 1.647);
+                @media screen and (max-width : 992px) {
                     font-size : 22px;
                 }
             }
         }
+
         &-description {
             padding-left   : 1px;
-            @include raleway-font (16px, #424242, 1.75);
+            @include raleway-font(16px, #424242, 1.75);
             letter-spacing : 0.048em;
-            @media screen and (max-width: 992px) {
+            @media screen and (max-width : 992px) {
                 text-align : justify;
                 font-size  : 19px;
             }
-            @media screen and (max-width: 480px) {
-                font-size: 15px;
+            @media screen and (max-width : 480px) {
+                font-size : 15px;
             }
+
             &--margin {
                 margin : 28px 0 29px;
             }
         }
     }
 }
+
 .featured-works {
-    @include paddings (129px, 125px);
-    @media screen and (max-width: 1200px) {
+    @include paddings(129px, 125px);
+    @media screen and (max-width : 1200px) {
         @include paddings(90px, 90px);
     }
-    @media screen and (max-width: 768px) {
-        @include paddings (60px, 60px);
+    @media screen and (max-width : 768px) {
+        @include paddings(60px, 60px);
     }
-    @media screen and (max-width: 480px) {
-        @include paddings (40px, 40px);
+    @media screen and (max-width : 480px) {
+        @include paddings(40px, 40px);
     }
+
     &__title {
         margin : 0 0 10px 40px;
         @include section-title;
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width : 1200px) {
             margin : $margin-media;
         }
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width : 992px) {
             margin : $margin-media;
         }
-        @media screen and (max-width: 768px) {
-            margin: $margin-media;
+        @media screen and (max-width : 768px) {
+            margin : $margin-media;
         }
-        @media screen and (max-width: 480px) {
-            margin: $margin-media;
-            @include block-font (30px, 1);
+        @media screen and (max-width : 480px) {
+            margin : $margin-media;
+            @include block-font(30px, 1);
         }
     }
+
     &__description {
         @include section-description(17px, 1.647, 0.07em);
-        @media screen and (max-width: 480px) {
-            font-size: 15px;
+        @media screen and (max-width : 480px) {
+            font-size : 15px;
         }
     }
+
     &__content {
         margin-top            : 115px;
         display               : grid;
@@ -360,65 +399,76 @@ body {
         grid-template-rows    : 1fr 1fr;
         gap                   : 13px 15px;
         list-style-type       : none;
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width : 1200px) {
             margin-top            : $margin-top_1-media;
             justify-items         : center;
             grid-template-columns : 1fr 1fr;
         }
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width : 992px) {
             margin-top            : $margin-top_2-media;
             grid-template-columns : 1fr;
         }
-        @media screen and (max-width: 768px) {
-            margin-top: $margin-top_3-media;
+        @media screen and (max-width : 768px) {
+            margin-top : $margin-top_3-media;
         }
     }
+
     &__item {
-        @include image-size (370px, 359px);
+        @include image-size(370px, 359px);
         cursor : pointer;
     }
+
     &__image {
-        @media screen and (max-width: 480px) {
-            @include image-size (260px, 253px);
+        transition : 1s;
+        @media screen and (max-width : 480px) {
+            @include image-size(260px, 253px);
+        }
+        &:hover {
+            transform : scale(1.025);
         }
     }
+
     &__image:nth-child(3),
     &__image:last-child {
         margin-left : -1px;
     }
 }
+
 .small-team {
-    @include paddings (99px, 162px);
-    @include background-color (#f9fbfb);
-    @media screen and (max-width: 1200px) {
+    @include paddings(99px, 162px);
+    @include background-color(#f9fbfb);
+    @media screen and (max-width : 1200px) {
         @include paddings(90px, 76px);
     }
-    @media screen and (max-width: 768px) {
-        @include paddings (60px, 60px);
+    @media screen and (max-width : 768px) {
+        @include paddings(60px, 60px);
     }
-    @media screen and (max-width: 480px) {
-        @include paddings (40px, 40px);
+    @media screen and (max-width : 480px) {
+        @include paddings(40px, 40px);
     }
+
     &__title {
         margin-bottom : 8px;
         @include section-title;
-        @media screen and (max-width: 480px) {
-            margin: $margin-media;
-            @include block-font (30px, 1);
+        @media screen and (max-width : 480px) {
+            margin : $margin-media;
+            @include block-font(30px, 1);
         }
     }
+
     &__description {
         @include section-description(17px, 1.647, 0.072em);
-        @media screen and (max-width: 480px) {
-            font-size: 15px;
+        @media screen and (max-width : 480px) {
+            font-size : 15px;
         }
     }
+
     &__content {
         margin-top      : 117px;
         display         : flex;
         flex-wrap       : wrap;
         list-style-type : none;
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width : 1200px) {
             margin-top      : $margin-top_1-media;
             justify-content : space-around;
             & > .small-team__item {
@@ -426,72 +476,80 @@ body {
                 margin-left  : 0;
             }
         }
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width : 992px) {
             margin-top     : $margin-top_2-media;
             flex-direction : column;
             align-items    : center;
         }
-        @media screen and (max-width: 480px) {
-            margin-top: $margin-top_3-media;
+        @media screen and (max-width : 480px) {
+            margin-top : $margin-top_3-media;
         }
     }
+
     &__item {
-        @include image-size (370px, 440px);
+        @include image-size(370px, 440px);
         margin-bottom : 14px;
         cursor        : pointer;
+
         &:first-child,
         &:nth-child(4) {
             margin-right : 16px;
             margin-left  : -2px;
         }
+
         &:nth-child(2),
         &:nth-child(5) {
             margin-right : 15px;
         }
     }
+
     &__image {
-        @media screen and (max-width: 480px) {
-            @include image-size (260px, 309px);
+        @media screen and (max-width : 480px) {
+            @include image-size(260px, 309px);
         }
     }
 }
+
 .contact-us {
-    @include paddings (99px, 162px);
-    background      : linear-gradient(rgba(248, 250, 251, 0.671), rgba(248, 250, 251, 0.671)), url("../../image/contact-background.jpg") no-repeat center;
+    @include paddings(99px, 162px);
+    background      : linear-gradient(rgba(248, 250, 251, 0.671), rgba(248, 250, 251, 0.671)), url('../../image/contact-background.jpg') no-repeat center;
     background-size : 100%;
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width : 1200px) {
         @include paddings(90px, 90px);
     }
-    @media screen and (max-width: 768px) {
-        @include paddings (60px, 60px);
+    @media screen and (max-width : 768px) {
+        @include paddings(60px, 60px);
     }
-    @media screen and (max-width: 480px) {
-        @include paddings (40px, 40px);
+    @media screen and (max-width : 480px) {
+        @include paddings(40px, 40px);
     }
+
     &__content {
         display               : grid;
         grid-template-columns : 613px 500px;
         column-gap            : 26px;
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width : 1200px) {
             grid-template-columns : 750px;
             justify-content       : center;
             row-gap               : 15px;
         }
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width : 992px) {
             grid-template-columns : 500px;
         }
-        @media screen and (max-width: 768px) {
-            grid-template-columns: 420px;
+        @media screen and (max-width : 768px) {
+            grid-template-columns : 420px;
         }
-        @media screen and (max-width: 480px) {
-            grid-template-columns: 300px;
+        @media screen and (max-width : 480px) {
+            grid-template-columns : 300px;
         }
     }
+
     &__form,
     &__information {
-        @include background-color (rgba(2, 22, 35, 0.71));
+        @include background-color(rgba(2, 22, 35, 0.71));
         box-shadow : 0 0 30px 0 #e3e3e3;
     }
+
     &__form {
         margin-left    : -1px;
         margin-bottom  : 1px;
@@ -499,136 +557,160 @@ body {
         display        : flex;
         flex-direction : column;
     }
+
     &__name,
     &__subject,
     &__email,
     &__message {
         padding-left  : 3px;
-        @include raleway-font (15px, $color_1, 1.9);
+        @include raleway-font(15px, $color_1, 1.9);
         outline       : none;
         border        : none;
         border-bottom : 1px solid #55636c;
-        @include background-color (transparent);
+        @include background-color(transparent);
+
         &::placeholder {
             color   : $color_1;
             opacity : 0.6;
         }
     }
+
     &__subject,
     &__email {
         margin-top : 22px;
     }
+
     &__name {
         padding-bottom : 9px;
     }
+
     &__subject {
         padding-bottom : 8.2px;
     }
+
     &__email {
         padding-bottom : 11px;
         line-height    : 1.6;
     }
+
     &__message {
         padding-bottom : 55.3px;
         margin-top     : 23px;
     }
+
     &__submit {
-        margin-top       : 38px;
-        margin-left      : -1px;
-        padding          : 13px 35px 12px 36.5px;
-        align-self       : flex-start;
-        @include montserrat-font (18px, #4d4d4d, 0.11em);
-        font-weight      : $fontw_1;
-        line-height      : 1.556;
-        border-radius    : 2px;
-        @include background-color (#6EEEE4);
-        cursor           : pointer;
+        margin-top    : 38px;
+        margin-left   : -1px;
+        padding       : 13px 35px 12px 36.5px;
+        align-self    : flex-start;
+        @include montserrat-font(18px, #4d4d4d, 0.11em);
+        font-weight   : $fontw_1;
+        line-height   : 1.556;
+        border-radius : 2px;
+        @include background-color(#6eeee4);
+        cursor        : pointer;
+
         &:hover {
-            @include background-color (transparent);
+            @include background-color(transparent);
             color      : $color_1;
             transition : $transition_1;
         }
+
         &:active {
-            @include background-color ($color_4);
+            @include background-color($color_4);
             color      : $color_5;
             transition : $transition_1;
         }
     }
+
     &__information {
         padding : 29.5px 23px 18px 31px;
     }
+
     &__address,
     &__connection {
-        @include raleway-font (15px, $color_1, 1.6);
+        @include raleway-font(15px, $color_1, 1.6);
         opacity : 0.7;
     }
+
     &__connection {
         margin-top : 24px;
     }
+
     &__link {
         outline         : none;
         text-decoration : none;
         color           : $color_1;
     }
+
     &__map {
         margin-top  : 20px;
         margin-left : -9px;
     }
 }
+
 .footer {
     margin-left : -3px;
-    @include paddings (87px, 151px);
-    @include background-color (#262B2E);
-    @media screen and (max-width: 1200px) {
+    @include paddings(87px, 151px);
+    @include background-color(#262b2e);
+    @media screen and (max-width : 1200px) {
         padding-bottom : 90px;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width : 992px) {
         padding-top : 60px;
     }
-    @media screen and (max-width: 768px) {
-        @include paddings (60px, 60px);
+    @media screen and (max-width : 768px) {
+        @include paddings(60px, 60px);
     }
-    @media screen and (max-width: 480px) {
-        @include paddings (40px, 40px);
+    @media screen and (max-width : 480px) {
+        @include paddings(40px, 40px);
     }
+
     &__title {
-        @include raleway-font (16px, $color_1, 1.563);
+        @include raleway-font(16px, $color_1, 1.563);
         text-align     : center;
         opacity        : 0.8;
         text-transform : uppercase;
     }
+
     &__links {
         margin-top      : 12px;
         display         : flex;
         justify-content : center;
     }
+
     &__item {
         width           : 45px;
         height          : 40px;
         display         : flex;
         justify-content : center;
         align-items     : center;
-        @include block-font (20px, 2.1);
+        @include block-font(20px, 2.1);
         text-decoration : none;
         opacity         : 0.4;
-        @include background-color (#8a8a8a);
+        @include background-color(#8a8a8a);
+
         &:first-child,
         &:nth-child(3) {
             margin-right : 8px;
         }
+
         &:nth-child(2) {
             margin-right : 9px;
         }
+
         &:hover {
-            @include background-color (#71F6EB);
+            @include background-color(#71f6eb);
             transition : $transition_1;
             opacity    : 1;
+
             & .fab {
                 color   : $color_7;
                 opacity : 0.949;
             }
         }
     }
+
     .fa-pinterest-p,
     .fa-twitter,
     .fa-facebook-f,
@@ -639,75 +721,111 @@ body {
 
 // PopUp
 .hidden-scroll {
-    overflow: hidden;
+    overflow : hidden;
 }
+
 .popup {
-    width : 100%;
-    height : 100%;
-    position: fixed;
-    top : 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: all 1.0s ease 0s;
-    opacity: 0;
-    visibility: hidden;
+    width            : 100%;
+    height           : 100%;
+    position         : fixed;
+    top              : 0;
+    left             : 0;
+    background-color : rgba(0, 0, 0, 0.5);
+    transition       : all 1.0s ease 0s;
+    opacity          : 0;
+    visibility       : hidden;
+
     &.open {
-        opacity: 1;
-        visibility: visible;
+        opacity    : 1;
+        visibility : visible;
     }
+
     &.open .popup__content {
-        opacity: 1;
-        transform: perspective(400px) translate(0px, 0px) rotateX(0deg);
+        opacity   : 1;
+        transform : perspective(400px) translate(0px, 0px) rotateX(0deg);
     }
+
     &__body {
-        left: 50%;
-        top: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%);
+        left      : 50%;
+        top       : 50%;
+        position  : absolute;
+        transform : translate(-50%, -50%);
     }
+
     &__content {
-        width: 600px;
-        position: relative;
-        transition: all 1.0s ease 0s;
-        transform: perspective(400px) translate(0px, -100%) rotateX(45deg);
-        @media screen and (max-width: 768px) {
+        width      : 600px;
+        position   : relative;
+        transition : all 1.0s ease 0s;
+        transform  : perspective(400px) translate(0px, -100%) rotateX(45deg);
+        @media screen and (max-width : 768px) {
             width : 400px;
         }
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width : 480px) {
             width : 300px;
         }
     }
+
     &__close-button {
-        right: 15px;
-        position: absolute;
-        background: none;
-        cursor: pointer;
-        font-size: 60px;
-        color: #6EEEE4;
-        border-radius: 50%;
-        @media screen and (max-width: 768px) {
-            right: 10px;
-            font-size: 50px;
-            line-height: 50px;
+        right         : 15px;
+        position      : absolute;
+        background    : none;
+        cursor        : pointer;
+        font-size     : 60px;
+        color         : #6eeee4;
+        border-radius : 50%;
+        @media screen and (max-width : 768px) {
+            right       : 10px;
+            font-size   : 50px;
+            line-height : 50px;
         }
-        @media screen and (max-width: 480px) {
-            right: 5px;
-            font-size: 45px;
-            line-height: 35px;
+        @media screen and (max-width : 480px) {
+            right       : 5px;
+            font-size   : 45px;
+            line-height : 35px;
+        }
+        &:hover {
+            right            : 0;
+            width            : 11%;
+            background-color : rgba(138, 135, 135, 0.5);
+            @media screen and (max-width : 768px) {
+                width : 12%;
+            }
+            @media screen and (max-width : 480px) {
+                width : 11%;
+            }
         }
     }
-    &__close-button:hover {
-        right: 0;
-        width : 11%;
-        background-color: rgba(138, 135, 135, 0.5);
-        @media screen and (max-width: 768px) {
-            width : 12%;
-        }
-        @media screen and (max-width: 480px) {
-            width : 11%;
-        }
-    }
+
     &__image {
-        width: 100%;
+        width : 100%;
     }
+}
+
+// Slider
+.slider-container {
+	overflow: hidden;
+}
+.slider-item {
+	display: flex;
+}
+.slider-button-prev,
+.slider-button-next {
+    position      : absolute;
+    top           : 50%;
+    margin-top: -22px;
+	padding       : 15px;
+	font-size: 30px;
+	font-family    : 'Montserrat', sans-serif;
+    cursor        : pointer;
+	color: $color_1;
+    transition    : 0.6s ease;
+	border-radius: 0 5px 5px 0;
+}
+.slider-button-next {
+    right         : 0;
+	border-radius: 5px 0 0 5px;
+}
+.slider-button-prev:hover,
+.slider-button-next:hover {
+	background-color: rgba(0, 0, 0, 0.2);
 }
