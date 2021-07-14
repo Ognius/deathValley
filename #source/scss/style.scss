@@ -415,7 +415,6 @@ body {
 
     &__item {
         @include image-size(370px, 359px);
-        cursor : pointer;
     }
 
     &__image {
@@ -512,7 +511,7 @@ body {
 
 .contact-us {
     @include paddings(99px, 162px);
-    background      : linear-gradient(rgba(248, 250, 251, 0.671), rgba(248, 250, 251, 0.671)), url('../../image/contact-background.jpg') no-repeat center;
+    background      : linear-gradient(rgba(248, 250, 251, 0.671), rgba(248, 250, 251, 0.671)), url('../../images/contact-background.jpg') no-repeat center;
     background-size : 100%;
     @media screen and (max-width : 1200px) {
         @include paddings(90px, 90px);

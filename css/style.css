@@ -539,7 +539,6 @@ body {
 .featured-works__item {
     max-width: 370px;
     max-height: 359px;
-    cursor: pointer;
 }
 .featured-works__image {
     -webkit-transition: 1s;
@@ -676,9 +675,9 @@ body {
 .contact-us {
     padding-top: 99px;
     padding-bottom: 162px;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(248, 250, 251, 0.671)), to(rgba(248, 250, 251, 0.671))), url("../../image/contact-background.jpg") no-repeat center;
-    background: -o-linear-gradient(rgba(248, 250, 251, 0.671), rgba(248, 250, 251, 0.671)), url("../../image/contact-background.jpg") no-repeat center;
-    background: linear-gradient(rgba(248, 250, 251, 0.671), rgba(248, 250, 251, 0.671)), url("../../image/contact-background.jpg") no-repeat center;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(248, 250, 251, 0.671)), to(rgba(248, 250, 251, 0.671))), url("../../images/contact-background.jpg") no-repeat center;
+    background: -o-linear-gradient(rgba(248, 250, 251, 0.671), rgba(248, 250, 251, 0.671)), url("../../images/contact-background.jpg") no-repeat center;
+    background: linear-gradient(rgba(248, 250, 251, 0.671), rgba(248, 250, 251, 0.671)), url("../../images/contact-background.jpg") no-repeat center;
     background-size: 100%;
 }
 @media screen and (max-width: 1200px) {

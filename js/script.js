@@ -1,4 +1,10 @@
-// Popup
+lightbox.option({
+    'disableScrolling':	true,
+    'fadeDuration': 800,
+})
+
+
+/*// Popup
 const popupOpenImages = document.querySelectorAll('.featured-works__image');
 const popupImages = document.querySelector('.popup__image');
 const popupCloseImages = document.querySelector('.popup__close-button');
@@ -105,5 +111,5 @@ const checkButtons = () => {
     buttonNext.disabled = (position <= -(itemsCount - slidesToShow) * itemWidth);
 };
 
-checkButtons();
+checkButtons();*/
 

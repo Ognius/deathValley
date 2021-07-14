@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link href="css/style.css" rel="stylesheet">
+	<link href="css/lightbox.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Raleway&display=swap"
           rel="stylesheet">
@@ -29,7 +30,7 @@
 			<div class="header__contact">
 				<a class="header__button" href="#contact">CONTACT US</a>
 			</div>
-			<img alt="Juice Glass image" class="header__image" src="image/juice-glass.png">
+			<img alt="Juice Glass image" class="header__image" src="images/juice-glass.png">
 		</div>
 	</header>
 
@@ -39,7 +40,7 @@
 			<p class="about-us__description">Lorem ipsum dolor sit amet event landing template</p>
 			<div class="about-us__content">
 				<div class="about-us__image-container">
-					<img alt="About Us image" class="about-us__image" src="image/about-us-image.jpg">
+					<img alt="About Us image" class="about-us__image" src="images/about-us-image.jpg">
 				</div>
 				<div class="about-us__information">
 					<h3 class="about-us__information-title">We Actually Do amazing works</h3>
@@ -62,20 +63,20 @@
 		<div class="container">
 			<h2 class="featured-works__title">featured works</h2>
 			<p class="featured-works__description">Lorem ipsum dolor sit amet event landing template</p>
-			<ul class="featured-works__content">
-				<li class="featured-works__item"><img alt="Featured Works image 1" class="featured-works__image"
-													  src="image/banner-pic1.jpg"></li>
-				<li class="featured-works__item"><img alt="Featured Works image 2" class="featured-works__image"
-													  src="image/banner-pic2.jpg"></li>
-				<li class="featured-works__item"><img alt="Featured Works image 3" class="featured-works__image"
-													  src="image/banner-pic3.jpg"></li>
-				<li class="featured-works__item"><img alt="Featured Works image 4" class="featured-works__image"
-													  src="image/banner-pic4.jpg"></li>
-				<li class="featured-works__item"><img alt="Featured Works image 5" class="featured-works__image"
-													  src="image/banner-pic5.jpg"></li>
-				<li class="featured-works__item"><img alt="Featured Works image 6" class="featured-works__image"
-													  src="image/banner-pic6.jpg"></li>
-			</ul>
+			<div class="featured-works__content">
+				<a class="featured-works__item" href="images/banner-pic1-big.jpg" data-lightbox="image-set" data-alt="Featured Works image 1 Big"><img alt="Featured Works image 1" class="featured-works__image"
+													  src="images/banner-pic1.jpg"></a>
+				<a class="featured-works__item" href="images/banner-pic2-big.jpg" data-lightbox="image-set" data-alt="Featured Works image 2 Big"><img alt="Featured Works image 2" class="featured-works__image"
+													  src="images/banner-pic2.jpg"></a>
+				<a class="featured-works__item" href="images/banner-pic3-big.jpg" data-lightbox="image-set" data-alt="Featured Works image 3 Big"><img alt="Featured Works image 3" class="featured-works__image"
+													  src="images/banner-pic3.jpg"></a>
+				<a class="featured-works__item" href="images/banner-pic4-big.jpg" data-lightbox="image-set" data-alt="Featured Works image 4 Big"><img alt="Featured Works image 4" class="featured-works__image"
+													  src="images/banner-pic4.jpg"></a>
+				<a class="featured-works__item" href="images/banner-pic5-big.jpg" data-lightbox="image-set" data-alt="Featured Works image 5 Big"><img alt="Featured Works image 5" class="featured-works__image"
+													  src="images/banner-pic5.jpg"></a>
+				<a class="featured-works__item" href="images/banner-pic6-big.jpg" data-lightbox="image-set" data-alt="Featured Works image 6 Big"><img alt="Featured Works image 6" class="featured-works__image"
+													  src="images/banner-pic6.jpg"></a>
+			</div>
 		</div>
 	</section>
 
@@ -85,7 +86,7 @@
 			<p class="small-team__description">Lorem ipsum dolor sit amet event landing template</p>
 			<ul class="small-team__content">
 				<li class="small-team__item">
-					<img alt="Small Team image 1" class="small-team__image" src="image/team-pic1.jpg">
+					<img alt="Small Team image 1" class="small-team__image" src="images/team-pic1.jpg">
 
 					<div class="small-team__info">
 						<p class="small-team__name"><span class="small-team__job">AL RAYHAN</span> / UI Designer</p>
@@ -101,18 +102,18 @@
 				</li>
 
 				<li class="small-team__item">
-					<img alt="Small Team image 2" class="small-team__image" src="image/team-pic2.jpg">
+					<img alt="Small Team image 2" class="small-team__image" src="images/team-pic2.jpg">
 
 
 				</li>
 				<li class="small-team__item"><img alt="Small Team image 3" class="small-team__image"
-												  src="image/team-pic3.jpg"></li>
+												  src="images/team-pic3.jpg"></li>
 				<li class="small-team__item"><img alt="Small Team image 4" class="small-team__image"
-												  src="image/team-pic4.jpg"></li>
+												  src="images/team-pic4.jpg"></li>
 				<li class="small-team__item"><img alt="Small Team image 5" class="small-team__image"
-												  src="image/team-pic5.jpg"></li>
+												  src="images/team-pic5.jpg"></li>
 				<li class="small-team__item"><img alt="Small Team image 6" class="small-team__image"
-												  src="image/team-pic6.jpg"></li>
+												  src="images/team-pic6.jpg"></li>
 			</ul>
 		</div>
 	</section>
@@ -168,23 +169,24 @@
 	</footer>
 
 	<!--    PopUp-->
-	<div class="popup">
-		<div class="popup__body">
-			<div class="popup__content">
-				<div class="slider-container">
-					<div class="slider-row">
-						<div class="slider-item">
-							<img class="popup__image" src="#" alt="full image">
-						</div>
-						<button class="popup__close-button" type="button">&times;</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<button class="slider-button-prev" type="button">&#10094; Prev</button>
-		<button class="slider-button-next" type="button">Next &#10095;</button>
-	</div>
+<!--	<div class="popup">-->
+<!--		<div class="popup__body">-->
+<!--			<div class="popup__content">-->
+<!--				<div class="slider-container">-->
+<!--					<div class="slider-row">-->
+<!--						<div class="slider-item">-->
+<!--							<img class="popup__image" src="#" alt="full image">-->
+<!--						</div>-->
+<!--						<button class="popup__close-button" type="button">&times;</button>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		<button class="slider-button-prev" type="button">&#10094; Prev</button>-->
+<!--		<button class="slider-button-next" type="button">Next &#10095;</button>-->
+<!--	</div>-->
 
+	<script src="js/lightbox-plus-jquery.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>
