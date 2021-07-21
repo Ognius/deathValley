@@ -8,6 +8,7 @@ $color_5            : #083430;
 $color_6            : #404040;
 $color_7            : #000000;
 $transition_1       : 0.5s;
+$transition_2       : 1s;
 $margin-media       : 0 0 10px;
 $margin-top_1-media : 90px;
 $margin-top_2-media : 60px;
@@ -418,18 +419,13 @@ body {
     }
 
     &__image {
-        transition : 1s;
+        transition : $transition_2;
         @media screen and (max-width : 480px) {
             @include image-size(260px, 253px);
         }
         &:hover {
             transform : scale(1.025);
         }
-    }
-
-    &__image:nth-child(3),
-    &__image:last-child {
-        margin-left : -1px;
     }
 }
 
@@ -471,8 +467,8 @@ body {
             margin-top      : $margin-top_1-media;
             justify-content : space-around;
             & > .small-team__item {
-                margin-right : 0;
-                margin-left  : 0;
+                margin-right : 0 !important;
+                margin-left  : 0 !important;
             }
         }
         @media screen and (max-width : 992px) {
@@ -487,6 +483,7 @@ body {
 
     &__item {
         @include image-size(370px, 440px);
+        position: relative;
         margin-bottom : 14px;
         cursor        : pointer;
 
@@ -500,6 +497,12 @@ body {
         &:nth-child(5) {
             margin-right : 15px;
         }
+        &:hover {
+            .small-team__info {
+                opacity: 0.98;
+                transition: $transition_2;
+            }
+        }
     }
 
     &__image {
@@ -507,10 +510,76 @@ body {
             @include image-size(260px, 309px);
         }
     }
+
+    &__info {
+        @include image-size(335px, 241px);
+        left: 4.9%;
+        bottom: 3.1%;
+        padding: 40px 49px 42px 38px;
+        position: absolute;
+        @include background-color(#6DF6EB);
+        box-shadow: 0 7px 16px 0 #1414152e;
+        opacity: 0;
+        transition: $transition_2;
+        &::before {
+            content: "";
+            border: 12px solid transparent;
+            border-bottom: 20px solid #6df6eb;
+            position: absolute;
+            top: -31px;
+            left: 20px;
+        }
+        @media screen and (max-width : 480px) {
+            max-width: 100%;
+            right: 4.9%;
+            padding: 0 20px;
+        }
+    }
+    &__name {
+        @include block-font(15px, 1.2);
+        margin-bottom: 16px;
+        font-family: "Merriweather", sans-serif;
+        color: #757776;
+        letter-spacing: 1.2px;
+        font-style: italic;
+        @media screen and (max-width : 480px) {
+            margin-top: 20px;
+            font-size : 11px;
+        }
+    }
+    &__job {
+        font-size: 20px;
+        font-weight: $fontw_2;
+        color: #2b3231;
+        text-transform: uppercase;
+        font-style: normal;
+        @media screen and (max-width : 480px) {
+            font-size : 14px;
+        }
+    }
+    &__about-person {
+        @include raleway-font(16px, #000000cc, 1.5);
+        margin-bottom: 32px;
+        letter-spacing: 0.2px;
+        @media screen and (max-width : 480px) {
+            margin-bottom: 20px;
+            font-size : 12px;
+        }
+    }
+    &__social-links {
+        display: flex;
+        margin-bottom: 20px;
+        list-style-type: none;
+    }
+    &__social-item {
+        font-size: 13px;
+        margin-right: 14px;
+        color: #000000b3;
+    }
 }
 
 .contact-us {
-    @include paddings(99px, 162px);
+    @include paddings(132px, 123px);
     background      : linear-gradient(rgba(248, 250, 251, 0.671), rgba(248, 250, 251, 0.671)), url('../../images/contact-background.jpg') no-repeat center;
     background-size : 100%;
     @media screen and (max-width : 1200px) {

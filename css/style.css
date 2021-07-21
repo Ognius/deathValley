@@ -556,9 +556,6 @@ body {
         -ms-transform: scale(1.025);
             transform: scale(1.025);
 }
-.featured-works__image:nth-child(3), .featured-works__image:last-child {
-    margin-left: -1px;
-}
 
 .small-team {
     padding-top: 99px;
@@ -631,8 +628,8 @@ body {
             justify-content: space-around;
     }
     .small-team__content > .small-team__item {
-        margin-right: 0;
-        margin-left: 0;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
     }
 }
 @media screen and (max-width: 992px) {
@@ -655,6 +652,7 @@ body {
 .small-team__item {
     max-width: 370px;
     max-height: 440px;
+    position: relative;
     margin-bottom: 14px;
     cursor: pointer;
 }
@@ -665,16 +663,105 @@ body {
 .small-team__item:nth-child(2), .small-team__item:nth-child(5) {
     margin-right: 15px;
 }
+.small-team__item:hover .small-team__info {
+    opacity: 0.98;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
 @media screen and (max-width: 480px) {
     .small-team__image {
         max-width: 260px;
         max-height: 309px;
     }
 }
+.small-team__info {
+    max-width: 335px;
+    max-height: 241px;
+    left: 4.9%;
+    bottom: 3.1%;
+    padding: 40px 49px 42px 38px;
+    position: absolute;
+    background-color: #6DF6EB;
+    -webkit-box-shadow: 0 7px 16px 0 #1414152e;
+            box-shadow: 0 7px 16px 0 #1414152e;
+    opacity: 0;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+.small-team__info::before {
+    content: "";
+    border: 12px solid transparent;
+    border-bottom: 20px solid #6df6eb;
+    position: absolute;
+    top: -31px;
+    left: 20px;
+}
+@media screen and (max-width: 480px) {
+    .small-team__info {
+        max-width: 100%;
+        right: 4.9%;
+        padding: 0 20px;
+    }
+}
+.small-team__name {
+    font-size: 15px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    font-family: "Merriweather", sans-serif;
+    color: #757776;
+    letter-spacing: 1.2px;
+    font-style: italic;
+}
+@media screen and (max-width: 480px) {
+    .small-team__name {
+        margin-top: 20px;
+        font-size: 11px;
+    }
+}
+.small-team__job {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2b3231;
+    text-transform: uppercase;
+    font-style: normal;
+}
+@media screen and (max-width: 480px) {
+    .small-team__job {
+        font-size: 14px;
+    }
+}
+.small-team__about-person {
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    color: #000000cc;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    letter-spacing: 0.2px;
+}
+@media screen and (max-width: 480px) {
+    .small-team__about-person {
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+}
+.small-team__social-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 20px;
+    list-style-type: none;
+}
+.small-team__social-item {
+    font-size: 13px;
+    margin-right: 14px;
+    color: #000000b3;
+}
 
 .contact-us {
-    padding-top: 99px;
-    padding-bottom: 162px;
+    padding-top: 132px;
+    padding-bottom: 123px;
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(248, 250, 251, 0.671)), to(rgba(248, 250, 251, 0.671))), url("../../images/contact-background.jpg") no-repeat center;
     background: -o-linear-gradient(rgba(248, 250, 251, 0.671), rgba(248, 250, 251, 0.671)), url("../../images/contact-background.jpg") no-repeat center;
     background: linear-gradient(rgba(248, 250, 251, 0.671), rgba(248, 250, 251, 0.671)), url("../../images/contact-background.jpg") no-repeat center;

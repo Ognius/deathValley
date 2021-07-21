@@ -1,16 +1,43 @@
 lightbox.option({
     'disableScrolling':	true,
     'fadeDuration': 800,
-})
+    'imageFadeDuration': 1000,
+});
+
+const popupOpenImages = document.querySelectorAll('.featured-works__image');
+const body = document.querySelector('body');
+const timeout = 1000;
+console.log(lightbox);
+if (popupOpenImages.length > 0) {
+    popupOpenImages.forEach(function (item) {
+        item.addEventListener('click', function () {
+            bodyLock();
+        });
+    });
+}
+
+//     document.getElementsByName("div#lightboxOverlay.lightboxOverlay");
+
+console.log(getComputedStyle(document.body.lightbox));
+
+
+
+function bodyLock() {
+    body.style.paddingRight = window.innerWidth - body.offsetWidth + 'px';
+}
+
+function bodyUnlock() {
+    setTimeout(function () {
+        body.style.paddingRight = '0px';
+    }, timeout);
+}
 
 
 /*// Popup
-const popupOpenImages = document.querySelectorAll('.featured-works__image');
 const popupImages = document.querySelector('.popup__image');
 const popupCloseImages = document.querySelector('.popup__close-button');
 const popup = document.querySelector('.popup');
-const body = document.querySelector('body');
-const timeout = 1000;
+
 
 if (popupOpenImages.length > 0) {
     popupOpenImages.forEach(function (item) {
