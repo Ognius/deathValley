@@ -1,5 +1,5 @@
 ## Shopno / The Death Valley
-### Нажмите [здесь](https://ognius.github.io/), чтобы увидеть веб-версию проекта.
+### Нажмите [здесь](https://ognius.github.io/deathValley/), чтобы увидеть веб-версию проекта.
 
 ### Задачи: 
 - сверстать PixelPerfect для ширины макета
