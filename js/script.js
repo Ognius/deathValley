@@ -1,142 +1,24 @@
+// lightbox gallery for <section class="featured-works">
 lightbox.option({
-    'disableScrolling':	true,
     'fadeDuration': 800,
-    'imageFadeDuration': 1000,
 });
 
-const popupOpenImages = document.querySelectorAll('.featured-works__image');
-const body = document.querySelector('body');
-const timeout = 1000;
-console.log(lightbox);
-if (popupOpenImages.length > 0) {
-    popupOpenImages.forEach(function (item) {
-        item.addEventListener('click', function () {
-            bodyLock();
-        });
-    });
+// hover-effect for <section class="small-team">
+const smallTeamImages = document.querySelectorAll('.small-team__image');
+
+if (smallTeamImages.length > 0) {
+    smallTeamImages.forEach(function (item) {
+        item.insertAdjacentHTML("afterend",
+            `<div class="small-team__info">
+                      <p class="small-team__name"><span class="small-team__job">AL RAYHAN</span> / UI Designer</p>
+                      <p class="small-team__about-person">Lorem Ipsum is not simply is an action designer random text.
+                          <br>It has roots in a piece.</p>
+                      <ul class="small-team__social-links">
+                          <li><a class="small-team__social-item" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                          <li><a class="small-team__social-item" href="#"><i class="fab fa-twitter"></i></a></li>
+                          <li><a class="small-team__social-item" href="#"><i class="fab fa-dribbble"></i></a></li>
+                          <li><a class="small-team__social-item" href="#"><i class="far fa-envelope"></i></a></li>
+                      </ul>
+                  </div>`);
+    })
 }
-
-//     document.getElementsByName("div#lightboxOverlay.lightboxOverlay");
-
-console.log(getComputedStyle(document.body.lightbox));
-
-
-
-function bodyLock() {
-    body.style.paddingRight = window.innerWidth - body.offsetWidth + 'px';
-}
-
-function bodyUnlock() {
-    setTimeout(function () {
-        body.style.paddingRight = '0px';
-    }, timeout);
-}
-
-
-/*// Popup
-const popupImages = document.querySelector('.popup__image');
-const popupCloseImages = document.querySelector('.popup__close-button');
-const popup = document.querySelector('.popup');
-
-
-if (popupOpenImages.length > 0) {
-    popupOpenImages.forEach(function (item) {
-        item.addEventListener('click', function () {
-            const imageSrc = this.getAttribute('src');
-            popupImages.setAttribute('src', imageSrc);
-            popup.classList.add('open');
-            bodyLock();
-
-            if (imageSrc === 'image/banner-pic2.jpg' || imageSrc === 'image/banner-pic6.jpg') {
-                popupCloseImages.style.color = '#b83868';
-            } else {
-                popupCloseImages.style.color = '#6eeee4';
-            }
-
-            popup.querySelector('.popup__body').addEventListener('click', function (e) {
-                e.stopPropagation();
-            });
-
-        });
-    });
-}
-
-function popupCloseImage(item) {
-    item.addEventListener('click', function () {
-        popupLock();
-    });
-}
-
-popupCloseImage(popupCloseImages);
-popupCloseImage(popup);
-
-function bodyLock() {
-    const lockPaddingValue = window.innerWidth - body.offsetWidth + 'px';
-    body.style.paddingRight = lockPaddingValue;
-    body.classList.add('hidden-scroll');
-}
-
-function bodyUnlock() {
-    setTimeout(function () {
-        body.style.paddingRight = '0px';
-        body.classList.remove('hidden-scroll');
-    }, timeout);
-}
-
-document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-        popupLock();
-    }
-});
-
-const popupLock = () => {
-    popup.classList.remove('open');
-    bodyUnlock();
-}
-
-// Initialize slider
-let position = 0;
-const slidesToShow = 1;
-const slidesToScroll = 1;
-const container = document.querySelector('.slider-container');
-const row = document.querySelector('.slider-row');
-const buttonPrev = document.querySelector('.slider-button-prev');
-const buttonNext = document.querySelector('.slider-button-next');
-const items = document.querySelectorAll('.slider-item');
-const itemsCount = items.length;
-const itemWidth = container.clientWidth / slidesToShow;
-const movePosition = slidesToScroll * itemWidth;
-
-items.forEach(function (item) {
-  item.style.minWidth = `${itemWidth}px`;
-});
-
-buttonNext.addEventListener('click', function () {
-    const itemRemain = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
-
-    position -= (itemRemain >= slidesToScroll) ? movePosition : itemRemain * itemWidth;
-
-    setPosition();
-    checkButtons();
-});
-
-buttonPrev.addEventListener('click', function () {
-   const itemRemain = Math.abs(position) / itemWidth;
-
-   position += (itemRemain >= slidesToScroll) ? movePosition : itemRemain * itemWidth;
-
-   setPosition();
-   checkButtons();
-});
-
-const setPosition = () => {
-   row.style.transform = `translateX(${position}px)`;
-};
-
-const checkButtons = () => {
-    buttonPrev.disabled = (position === 0);
-    buttonNext.disabled = (position <= -(itemsCount - slidesToShow) * itemWidth);
-};
-
-checkButtons();*/
-
