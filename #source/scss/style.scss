@@ -523,7 +523,7 @@ body {
         opacity: 0;
         transition: $transition_2;
         &::before {
-            content: "";
+            content: '';
             border: 12px solid transparent;
             border-bottom: 20px solid #6df6eb;
             position: absolute;
@@ -539,7 +539,7 @@ body {
     &__name {
         @include block-font(15px, 1.2);
         margin-bottom: 16px;
-        font-family: "Merriweather", sans-serif;
+        font-family: 'Merriweather', sans-serif;
         color: #757776;
         letter-spacing: 1.2px;
         font-style: italic;
