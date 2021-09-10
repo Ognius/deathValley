@@ -4,24 +4,64 @@ lightbox.option({
 });
 
 // hover-effect for <section class="small-team">
-const smallTeamImages = document.querySelectorAll('.small-team__image');
+const smallTeamContent = document.querySelector('.small-team__content');
+const smallTeam = [
+    {
+        name: 'AL RAYHAN',
+        position: 'UI Designer',
+        imageUrl: 'images/team-pic1.jpg',
+        imageAlt: 'Small Team image 1',
+    },
+    {
+        name: 'AL RAYHAN',
+        position: 'UI Designer',
+        imageUrl: 'images/team-pic2.jpg',
+        imageAlt: 'Small Team image 2',
+    },
+    {
+        name: 'AL RAYHAN',
+        position: 'UI Designer',
+        imageUrl: 'images/team-pic3.jpg',
+        imageAlt: 'Small Team image 3',
+    },
+    {
+        name: 'AL RAYHAN',
+        position: 'UI Designer',
+        imageUrl: 'images/team-pic4.jpg',
+        imageAlt: 'Small Team image 4',
+    },
+    {
+        name: 'AL RAYHAN',
+        position: 'UI Designer',
+        imageUrl: 'images/team-pic5.jpg',
+        imageAlt: 'Small Team image 5',
+    },
+    {
+        name: 'AL RAYHAN',
+        position: 'UI Designer',
+        imageUrl: 'images/team-pic6.jpg',
+        imageAlt: 'Small Team image 6',
+    }
+];
 
-if (smallTeamImages.length > 0) {
-    smallTeamImages.forEach(function (item) {
-        item.insertAdjacentHTML('afterend',
-            `<div class="small-team__info">
-                      <p class="small-team__name"><span class="small-team__job">AL RAYHAN</span> / UI Designer</p>
-                      <p class="small-team__about-person">Lorem Ipsum is not simply is an action designer random text.
-                          <br>It has roots in a piece.</p>
-                      <ul class="small-team__social-links">
-                          <li><a class="small-team__social-item" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                          <li><a class="small-team__social-item" href="#"><i class="fab fa-twitter"></i></a></li>
-                          <li><a class="small-team__social-item" href="#"><i class="fab fa-dribbble"></i></a></li>
-                          <li><a class="small-team__social-item" href="#"><i class="far fa-envelope"></i></a></li>
-                      </ul>
-                  </div>`);
-    })
-}
+let smallTeamMembers = smallTeam.map(function (item) {return (
+    `<li class="small-team__item">
+        <img alt="${item.imageAlt}" class="small-team__image" src="${item.imageUrl}">
+        <div class="small-team__info">
+            <p class="small-team__name"><span class="small-team__job">${item.name}</span> / ${item.position}</p>
+            <p class="small-team__about-person">Lorem Ipsum is not simply is an action designer random text.
+                <br>It has roots in a piece.</p>
+            <ul class="small-team__social-links">
+                <li><a class="small-team__social-item" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a class="small-team__social-item" href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a class="small-team__social-item" href="#"><i class="fab fa-dribbble"></i></a></li>
+                <li><a class="small-team__social-item" href="#"><i class="far fa-envelope"></i></a></li>
+            </ul>
+        </div>
+     </li>`
+)});
+
+smallTeamContent.innerHTML = smallTeamMembers.join('');
 
 // button Scroll Up
 const insertButton = document.body;
