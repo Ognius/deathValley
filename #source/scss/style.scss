@@ -76,6 +76,32 @@ $margin-top_3-media : 40px;
     line-height : $lh;
 }
 
+@mixin animation-text-no-active {
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+@mixin animation-text-first-active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+@mixin animation-text-delay-active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 0.8s ease 0.4s;
+}
+
+@mixin animation-image-no-active {
+    transform: scale(0);
+    transition: all 0.8s ease 0s;
+}
+
+@mixin animation-image-active {
+    transform: scale(1);
+}
+
 * {
     margin     : 0;
     padding    : 0;
@@ -137,6 +163,7 @@ body {
         text-align    : center;
         font-weight   : $fontw_2;
         text-shadow   : 0 9px 10px #c2c2c2;
+        @include animation-text-no-active;
         @media screen and (max-width : 1200px) {
             @include block-font(41px, 3.5rem);
         }
@@ -167,6 +194,10 @@ body {
         &-second-sentence {
             letter-spacing : 0.05em;
         }
+    }
+    
+    &__title.active {
+        @include animation-text-first-active;
     }
 
     &__contact {
@@ -238,6 +269,7 @@ body {
 
     &__title {
         margin : 0 0 11px 22px;
+        @include animation-text-no-active;
         @include section-title;
         @media screen and (max-width : 1200px) {
             margin : $margin-media;
@@ -253,12 +285,21 @@ body {
             @include block-font(30px, 1);
         }
     }
+    
+    &__title.active {
+        @include animation-text-first-active;
+    }
 
     &__description {
+        @include animation-text-no-active;
         @include section-description(18px, 1.556, 0.07em);
         @media screen and (max-width : 480px) {
             font-size : 15px;
         }
+    }
+    
+    &__description.active {
+        @include animation-text-delay-active;
     }
 
     &__content {
@@ -286,11 +327,16 @@ body {
             margin : 0;
         }
     }
+    
+    &__image-container.active &__image{
+        @include animation-image-active;
+    }
 
     &__image {
         @include image-size(392px, 483px);
         @include background-color(#e4e5e8);
         box-shadow : 0 0 30px 0 #e0e0e1;
+        @include animation-image-no-active;
         @media screen and (max-width : 480px) {
             @include image-size(260px, 320px);
         }
@@ -319,6 +365,7 @@ body {
             font-weight    : $fontw_2;
             text-transform : uppercase;
             letter-spacing : 0.07em;
+            @include animation-text-no-active;
             @media screen and (max-width : 992px) {
                 font-size : 23px;
             }
@@ -336,11 +383,16 @@ body {
                 }
             }
         }
+        
+        &-title.active {
+            @include animation-text-first-active;
+        }
 
         &-description {
             padding-left   : 1px;
             @include raleway-font(16px, #424242, 1.75);
             letter-spacing : 0.048em;
+            @include animation-text-no-active;
             @media screen and (max-width : 992px) {
                 text-align : justify;
                 font-size  : 19px;
@@ -352,6 +404,9 @@ body {
             &--margin {
                 margin : 28px 0 29px;
             }
+        }
+        &-description.active {
+            @include animation-text-delay-active;
         }
     }
 }
@@ -370,6 +425,7 @@ body {
 
     &__title {
         margin : 0 0 10px 40px;
+        @include animation-text-no-active;
         @include section-title;
         @media screen and (max-width : 1200px) {
             margin : $margin-media;
@@ -385,12 +441,21 @@ body {
             @include block-font(30px, 1);
         }
     }
+    
+    &__title.active {
+        @include animation-text-first-active;
+    }
 
     &__description {
         @include section-description(17px, 1.647, 0.07em);
+        @include animation-text-no-active;
         @media screen and (max-width : 480px) {
             font-size : 15px;
         }
+    }
+    
+    &__description.active {
+        @include animation-text-delay-active;
     }
 
     &__content {
@@ -413,18 +478,23 @@ body {
             margin-top : $margin-top_3-media;
         }
     }
+    
+    &__content.active &__image {
+        @include animation-image-active;
+        &:hover {
+            transform : scale(1.025);
+            transition : $transition_2;
+        }
+    }
 
     &__item {
         @include image-size(370px, 359px);
     }
 
     &__image {
-        transition : $transition_2;
+        @include animation-image-no-active;
         @media screen and (max-width : 480px) {
             @include image-size(260px, 253px);
-        }
-        &:hover {
-            transform : scale(1.025);
         }
     }
 }
@@ -445,17 +515,27 @@ body {
     &__title {
         margin-bottom : 8px;
         @include section-title;
+        @include animation-text-no-active;
         @media screen and (max-width : 480px) {
             margin : $margin-media;
             @include block-font(30px, 1);
         }
     }
+    
+    &__title.active {
+        @include animation-text-first-active;
+    }
 
     &__description {
         @include section-description(17px, 1.647, 0.072em);
+        @include animation-text-no-active;
         @media screen and (max-width : 480px) {
             font-size : 15px;
         }
+    }
+    
+    &__description.active {
+        @include animation-text-delay-active;
     }
 
     &__content {
@@ -482,6 +562,10 @@ body {
             margin-top : $margin-top_3-media;
         }
     }
+    
+    &__content.active &__image {
+        @include animation-image-active;
+    }
 
     &__item {
         @include image-size(370px, 440px);
@@ -507,6 +591,7 @@ body {
     }
 
     &__image {
+        @include animation-image-no-active;
         @media screen and (max-width : 480px) {
             @include image-size(260px, 309px);
         }
